@@ -1,17 +1,36 @@
-#fibonacci series 
-def fibo(n):
-a=0
-b=1
-if n<0:
-print("Wrong input")
-else if n==0:
-return a=0
-else if n==1:
-return b=1
-else:
-for i in range(2,n):
-c=a+b
-a=b
-b=c
-return b
-print(fibo(9))
+# Function for Fibonacci number 
+#Using recursion
+  
+def Fibonacci(n): 
+    if n<0: 
+        print("Incorrect input") 
+    # First Fibonacci number is 0 
+    elif n==1: 
+        return 0
+    # Second Fibonacci number is 1 
+    elif n==2: 
+        return 1
+    else: 
+        return Fibonacci(n-1)+Fibonacci(n-2) 
+  
+# Driver Program 
+  
+print(Fibonacci(9)) 
+
+
+#Using numbers 0 and 1
+FibArray = [0,1] 
+  
+def fibonacci(n): 
+    if n<0: 
+        print("Incorrect input") 
+    elif n<=len(FibArray): 
+        return FibArray[n-1] 
+    else: 
+        temp_fib = fibonacci(n-1)+fibonacci(n-2) 
+        FibArray.append(temp_fib) 
+        return temp_fib 
+  
+# Driver Program 
+  
+print(fibonacci(9)) 
